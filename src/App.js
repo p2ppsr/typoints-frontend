@@ -51,6 +51,7 @@ const submitToOverlay = async (tx, topics = [topic]) => {
 
 window.submitToOverlay = submitToOverlay
 window.getTransactionOutputs = getTransactionOutputs
+window.tokenator = tokenator
 
 const App = () => {
   const [tokens, setTokens] = useState(10)
