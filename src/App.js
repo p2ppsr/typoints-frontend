@@ -9,6 +9,7 @@ const peerServHost = 'https://peerserv.babbage.systems'
 const messageBox = 'TyPoints-Box'
 const protocolID = 'tokens'
 const basket = 'TyPoints2'
+const topic = 'TyPoints'
 const satoshis = 1000
 
 const tokenator = new Tokenator({
@@ -23,7 +24,7 @@ const findFromOverlay = async ({ txid, vout }) => {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      provider: basket,
+      provider: topic,
       query: {
         txid,
         vout
@@ -33,7 +34,7 @@ const findFromOverlay = async ({ txid, vout }) => {
   return await result.json()
 }
 
-const submitToOverlay = async (tx, topics = [basket]) => {
+const submitToOverlay = async (tx, topics = [topic]) => {
   const client = new Authrite()
   const result = await client.request(`${confederacyHost}/submit`, {
     method: 'post',
