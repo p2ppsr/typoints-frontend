@@ -8,7 +8,7 @@ const confederacyHost = 'https://confederacy.babbage.systems'
 const peerServHost = 'https://peerserv.babbage.systems'
 const messageBox = 'TyPoints-Box'
 const protocolID = 'tokens'
-const basket = 'TyPoints'
+const basket = 'TyPoints2'
 const satoshis = 1000
 
 const tokenator = new Tokenator({
@@ -49,6 +49,7 @@ const submitToOverlay = async (tx, topics = [basket]) => {
 }
 
 window.submitToOverlay = submitToOverlay
+window.getTransactionOutputs = getTransactionOutputs
 
 const App = () => {
   const [tokens, setTokens] = useState(10)
