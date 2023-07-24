@@ -135,7 +135,7 @@ const App = () => {
           }]
         }
       } else {
-        inputs[x.txid].outputsToRedeem.push({
+        inputs[t.txid].outputsToRedeem.push({
           index: t.vout,
           unlockingScript
         })
@@ -263,7 +263,8 @@ const App = () => {
           })
           const myKey = await getPublicKey({
             protocolID,
-            keyID: '1'
+            keyID: '1',
+            counterparty: message.sender
           })
           if (myKey !== decodedToken.lockingPublicKey) {
             console.log('Received token not belonging to me!')
