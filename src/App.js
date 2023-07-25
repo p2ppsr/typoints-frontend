@@ -267,7 +267,8 @@ const App = () => {
           const myKey = await getPublicKey({
             protocolID,
             keyID: '1',
-            counterparty: message.sender
+            counterparty: message.sender,
+            forSelf: true
           })
           if (myKey !== decodedToken.lockingPublicKey) {
             console.log('Received token not belonging to me!')
