@@ -90,13 +90,13 @@ const App = () => {
     }
 
     // Send the transaction to the recipient
-     await tokenator.sendMessage({
-        recipient: await getPublicKey({ identityKey: true }),
-        messageBox,
-        body: JSON.stringify({
-          token: tokenForRecipient
-        })
-     })
+    await tokenator.sendMessage({
+      recipient: await getPublicKey({ identityKey: true }),
+      messageBox,
+      body: JSON.stringify({
+        token: tokenForRecipient
+      })
+    })
   }
 
   // To send a token:
@@ -118,7 +118,7 @@ const App = () => {
         outputAmount: t.amount,
         protocolID,
         keyID: '1',
-        counterparty: t.customInstructions ? JSON.parse(t.customInstructions).sender : 'self'
+        counterparty: t.customInstructions ? JSON.parse(JSON.parse(t.customInstructions)).sender : 'self'
       })
       if (!inputs[t.txid]) {
         inputs[t.txid] = {
@@ -199,12 +199,12 @@ const App = () => {
     }
 
     // Send the transaction to the recipient
-     await tokenator.sendMessage({
-        recipient,
-        messageBox,
-        body: JSON.stringify({
-          token: tokenForRecipient
-        })
+    await tokenator.sendMessage({
+      recipient,
+      messageBox,
+      body: JSON.stringify({
+        token: tokenForRecipient
+      })
     })
 
     // Update your own tokens to be the new outputs
