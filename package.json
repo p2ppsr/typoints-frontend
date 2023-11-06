@@ -6,7 +6,7 @@
   "dependencies": {
     "@babbage/sdk": "^0.4.25",
     "@babbage/tokenator": "^0.1.1",
-    "authrite-js": "^0.2.15",
+    "authrite-js": "^0.3.2",
     "babbage-kvstore": "^1.1.10",
     "pushdrop": "^0.1.21",
     "react": "^17.0.2",
